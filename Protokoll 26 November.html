@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Diffie-Hellman-Schlüsselaustausch</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        h1 {
+            color: #00698f;
+            font-weight: 700;
+        }
+        
+        p {
+            font-size: 16px;
+            line-height: 24px;
+        }
+        
+        pre {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Diffie-Hellman-Schlüsselaustausch</h1>
+
+<p>
+Der Diffie-Hellman-Schlüsselaustausch ist ein asymmetrisches Kryptoverfahren, das von Whitfield Diffie und Martin Hellman in den 70er Jahren entwickelt wurde.
+</p>
+
+<h2>Schritt 1: Auswahl der Primzahl p und des Generators g</h2>
+
+<p>
+Die Teilnehmer (Alice und Bob) wählen eine große Primzahl p und einen Generator g, wobei g in Z_p^* liegt.
+</p>
+
+<pre>
+p = 23
+g = 5
+</pre>
+
+<h2>Schritt 2: Berechnung des öffentlichen Schlüssels</h2>
+
+<p>
+Alice berechnet ihren öffentlichen Schlüssel, indem sie g mit ihrem privaten Schlüssel x multipliziert und dann modulo p erneut berechnet:
+A = g^x mod p
+</p>
+
+<pre>
+A = 5^x mod 23
+</pre>
+
+<h2>Schritt 3: Berechnung des gemeinsamen geheimen Schlüssels</h2>
+
+<p>
+Alice berechnet den gemeinsamen geheimen Schlüssel, indem sie B mit ihrem privaten Schlüssel x multipliziert und dann modulo p erneut berechnet:
+K_A = B^x mod p
+</p>
+
+<pre>
+K_A = (5^y)^x mod 23
+= A
+</pre>
+
+<h2>Beispiel:</h2>
+
+<p>
+Betrachten wir das Beispiel mit p = 23, g = 5, A = 5^x mod 23 und B = 5^y mod 23.
+</p>
+
+<pre>
+K_A = B^x mod p
+= (5^y)^x mod 23
+= A
+</pre>
+
+<h2>Zusammenfassung:</h2>
+
+<p>
+Der Diffie-Hellman-Schlüsselaustausch ist ein asymmetrisches Kryptoverfahren, das den sicheren Austausch von Schlüsseln über eine unsichere Verbindung ermöglicht.
+</p>
+
+<pre>
+K_A = A
+K_B = B
+</pre>
+
+</body>
+</html>
